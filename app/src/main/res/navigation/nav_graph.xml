@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.adasoraninda.plainolnotes.MainFragment"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/nav_main_to_editor"
+            app:destination="@id/editor_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editor_fragment"
+        android:name="com.adasoraninda.plainolnotes.EditorFragment"
+        tools:layout="@layout/fragment_editor">
+
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+
+    </fragment>
+
+</navigation>

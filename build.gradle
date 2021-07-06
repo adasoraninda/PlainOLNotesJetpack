@@ -1,0 +1,45 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.versions = [
+            "navigation": "2.3.5",
+            "kotlin"    : "1.5.20",
+            "room"      : "2.3.0"
+    ]
+
+    ext.deps = [
+            "navigation": [
+                    "fragment": "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                    "ui"      : "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+            ],
+            "room"      : [
+                    "runtime"   : "androidx.room:room-runtime:${versions.room}",
+                    "processor" : "androidx.room:room-compiler:${versions.room}",
+                    "coroutines": "androidx.room:room-ktx:${versions.room}"
+            ]
+    ]
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.navigation}"
+        classpath "com.android.tools.build:gradle:4.2.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
